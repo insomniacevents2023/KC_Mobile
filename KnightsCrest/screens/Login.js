@@ -1,9 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Linking } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Linking, Image} from 'react-native';
 import { Card } from '@rneui/themed';
 import { useState } from 'react';
 import { Button } from '@rneui/base';
 
+const users = [{
+  fName: "Ima",
+  lName: "knight",
+  kCashNum: "6009 1921 5309 4359",
+  libNumber: "2 21031 52662067",
+  UCFID: 123457,
+  username: "ik123456",
+  password: 'ikpassword'
+},]
 export default function Login({navigation}) {
 
     const [accountFocus, setAccountFocus] = useState(false);
@@ -13,7 +22,7 @@ export default function Login({navigation}) {
 
     return (
         <View style={styles.container}>
-          <Text>University of Central Florida</Text>
+          <Image style = {styles.tabHorizontal} source={require('../assets/images/TabLockup.png')} alt={'University of Central Florida'}/>
           <Card containerStyle = {styles.loginCard}>
               <Text style ={styles.fieldTitle}>Account</Text>
                 <TextInput 
@@ -34,11 +43,12 @@ export default function Login({navigation}) {
                     color={"#000"}
                     title = "Sign On"
                     accessibilityLabel= "Sign On"
-                    onPress={()=> navigation.navigate('Home' , {name: Home})}
+                    onPress= {() => navigation.navigate("Home", {fName: users.fName, lName: users.lName, kCash: users.kCashNum, libNumber: users.libNum, id: users.UCFID})}
                     ></Button>
                   </Card>
                   <Text>By signing on, you agree to the terms of the </Text>
                   <Text style = {styles.hyperlink} onPress={() => Linking.openURL('https://policies.ucf.edu/')}>UCF Policies & Procedures.</Text>
+                  
                 <StatusBar style="auto" />
         </View>)
 }
@@ -80,5 +90,9 @@ const styles = StyleSheet.create({
     hyperlink: {
       color: "blue",
       textDecorationLine: "underline"
+    },
+    tabHorizontal: {
+        width:313,
+        height:76  
     }
   });
