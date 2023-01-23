@@ -1,8 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
+
 import { StyleSheet, Text, View, TextInput, Linking, Image} from 'react-native';
 import { Card } from '@rneui/themed';
 import { useState } from 'react';
 import { Button } from '@rneui/base';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const users = [{
   fName: "Ima",
@@ -21,6 +23,7 @@ export default function Login({navigation}) {
     const passwordIsFocus = PasswordFocus ? styles.loginInputFocus : styles.loginInput;
 
     return (
+      <SafeAreaProvider>
         <View style={styles.container}>
           <Image style = {styles.tabHorizontal} source={require('../assets/images/TabLockup.png')} alt={'University of Central Florida'}/>
           <Card containerStyle = {styles.loginCard}>
@@ -50,7 +53,9 @@ export default function Login({navigation}) {
                   <Text style = {styles.hyperlink} onPress={() => Linking.openURL('https://policies.ucf.edu/')}>UCF Policies & Procedures.</Text>
                   
                 <StatusBar style="auto" />
-        </View>)
+        </View>
+        </SafeAreaProvider>
+        )
 }
 
 const styles = StyleSheet.create({

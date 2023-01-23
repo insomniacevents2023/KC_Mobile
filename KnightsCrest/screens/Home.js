@@ -1,14 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Header } from '@rneui/themed';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
-import { Card } from '@rneui/themed';
-import { useState } from 'react';
-import { Button } from '@rneui/base';
+
 
 export default function Home({navigation, route}){
     const {fName} = route.params 
     return(
-        <View style={styles.container}>
+      <SafeAreaProvider>
+        <View style = {styles.container}>
+          <Header style ={styles.headerContainer}></Header>
         </View>
+      </SafeAreaProvider>
     );
 }
 const styles = StyleSheet.create({
@@ -17,4 +20,12 @@ const styles = StyleSheet.create({
           backgroundColor: '#fff',
           alignItems: 'center',
           justifyContent: 'center',
-        }})
+        },
+        headerContainer: {
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: '#397af8',
+          marginBottom: 20,
+          width: '100%',
+          paddingVertical: 15,
+        },})
