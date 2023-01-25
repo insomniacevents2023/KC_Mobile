@@ -5,9 +5,6 @@ import { useRef, useState } from 'react';
 import FlipCard from '../../components/FlipCard';
 
 export default function HomeScreen({navigation, route}) {
-
-  
-
   
   const animate = useRef(new Animated.Value(0));
   const [isFlipped, setIsFlipped] = useState(false);
