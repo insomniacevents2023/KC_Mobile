@@ -27,6 +27,7 @@ export default function Login({navigation}) {
         <View style={styles.container}>
           <Image style = {styles.tabHorizontal} source={require('../assets/images/TabLockup.png')} alt={'University of Central Florida'}/>
           <Card containerStyle = {styles.loginCard}>
+            <View>
               <Text style ={styles.fieldTitle}>Account</Text>
                 <TextInput 
                 onFocus={()=> {setAccountFocus(true)}}
@@ -42,12 +43,15 @@ export default function Login({navigation}) {
                   onFocus={()=> setPasswordFocus(true)}
                   onBlur={() => setPasswordFocus(false)}
                   style = {passwordIsFocus}></TextInput>
+              </View>
+              <View style={{paddingTop: 10}}>
                     <Button 
                     color={"#000"}
                     title = "Sign On"
                     accessibilityLabel= "Sign On"
                     onPress= {() => navigation.navigate("Home", {fName: users.fName, lName: users.lName, kCash: users.kCashNum, libNumber: users.libNum, id: users.UCFID})}
                     ></Button>
+              </View>
                   </Card>
                   <Text>By signing on, you agree to the terms of the </Text>
                   <Text style = {styles.hyperlink} onPress={() => Linking.openURL('https://policies.ucf.edu/')}>UCF Policies & Procedures.</Text>

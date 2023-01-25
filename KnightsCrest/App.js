@@ -1,3 +1,4 @@
+
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -15,7 +16,7 @@ function App() {
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Home" component={Home}/>
+      <Stack.Screen name='Home' component={Home}/>
     </Stack.Navigator>
   </NavigationContainer>)
 }
