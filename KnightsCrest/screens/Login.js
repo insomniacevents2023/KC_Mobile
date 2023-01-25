@@ -49,7 +49,7 @@ export default function Login({navigation}) {
                     color={"#000"}
                     title = "Sign On"
                     accessibilityLabel= "Sign On"
-                    onPress= {() => navigation.navigate("Home", {fName: users.fName, lName: users.lName, kCash: users.kCashNum, libNumber: users.libNum, id: users.UCFID})}
+                    onPress= {() => navigation.navigate("Home", {users})}
                     ></Button>
               </View>
                   </Card>
