@@ -6,15 +6,17 @@ import { useState } from 'react';
 import { Button } from '@rneui/base';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-const users = [{
+let user = {
   fName: "Ima",
   lName: "knight",
   kCashNum: "6009 1921 5309 4359",
   libNumber: "2 21031 52662067",
   UCFID: 123457,
   username: "ik123456",
-  password: 'ikpassword'
-},]
+  password: 'ikpassword',
+  caste: 'Student',
+  expDate: '2025-03-31'
+}
 export default function Login({navigation}) {
 
     const [accountFocus, setAccountFocus] = useState(false);
@@ -49,7 +51,8 @@ export default function Login({navigation}) {
                     color={"#000"}
                     title = "Sign On"
                     accessibilityLabel= "Sign On"
-                    onPress= {() => navigation.navigate("Home", {users})}
+                    onPress= {() => navigation.navigate("Home", {...user
+                    })}
                     ></Button>
               </View>
                   </Card>

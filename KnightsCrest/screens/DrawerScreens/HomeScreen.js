@@ -3,18 +3,19 @@ import { Button } from '@rneui/themed';
 import {StyleSheet, View, Animated, Pressable} from 'react-native';
 import { useRef, useState } from 'react';
 import FlipCard from '../../components/FlipCard';
+import IDfront from '../../components/IDfront';
 
-export default function HomeScreen({navigation, route}) {
-  
+export default function HomeScreen(props) {
+  const {fName, lName, kCashNum, libNumber, UCFID, caste, expDate} = props
+
+  //Create an animation for turning the card over
   const animate = useRef(new Animated.Value(0));
   const [isFlipped, setIsFlipped] = useState(false);
-
   const handleFlip = () => {
     Animated.timing(
       animate.current,
       {duration: 300,
-      toValue: isFlipped ? 0: 180,
-    useNativeDriver: true}).start(()=>setIsFlipped(!isFlipped));
+      toValue: isFlipped ? 0: 180,}).start(()=>setIsFlipped(!isFlipped));
   };
   const interpolateFront = animate.current.interpolate({
     inputRange: [0, 180],
@@ -32,13 +33,23 @@ export default function HomeScreen({navigation, route}) {
       <View style={styles.container}>
         <View>
           <Animated.View style = {[{transform: [{rotateY: interpolateFront}]}, styles.hidden]}>
-            <FlipCard/>
+            <FlipCard 
+            isFlipped= {isFlipped}
+            fName= {fName}
+            lName = {lName} 
+            kCashNum ={kCashNum} 
+            libNumber = {libNumber} 
+            UCFID = {UCFID}
+            caste = {caste}
+            expDate = {expDate} />
           </Animated.View>
           <Animated.View style = {[{transform: [{rotateY: interpolateBack}]}, styles.back, styles.hidden]}>
             <FlipCard/>
           </Animated.View>
           <View style = {{paddingTop: 10}}>
-          <Button title={"press me"} onPress = {handleFlip}></Button>
+          <View>
+            <Button title={"press me"} onPress = {handleFlip}></Button>
+          </View>
         </View>
       </View>
       </View>
@@ -49,6 +60,7 @@ export default function HomeScreen({navigation, route}) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
+      backgroundColor: "#fff",
       alignItems: 'center', 
       justifyContent: 'center'
     },
