@@ -1,9 +1,9 @@
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Button } from '@rneui/themed';
 import {StyleSheet, View, Animated, Pressable} from 'react-native';
-import { useRef, useState } from 'react';
-import FlipCard from '../../components/FlipCard';
+import { useRef, useState } from 'react'; 
 import IDfront from '../../components/IDfront';
+import IDback from '../../components/IDback,';
 
 export default function HomeScreen(props) {
   const {fName, lName, kCashNum, libNumber, UCFID, caste, expDate} = props
@@ -15,6 +15,7 @@ export default function HomeScreen(props) {
     Animated.timing(
       animate.current,
       {duration: 300,
+      useNativeDriver: true,
       toValue: isFlipped ? 0: 180,}).start(()=>setIsFlipped(!isFlipped));
   };
   const interpolateFront = animate.current.interpolate({
@@ -33,7 +34,7 @@ export default function HomeScreen(props) {
       <View style={styles.container}>
         <View>
           <Animated.View style = {[{transform: [{rotateY: interpolateFront}]}, styles.hidden]}>
-            <FlipCard 
+            <IDfront
             isFlipped= {isFlipped}
             fName= {fName}
             lName = {lName} 
@@ -44,7 +45,7 @@ export default function HomeScreen(props) {
             expDate = {expDate} />
           </Animated.View>
           <Animated.View style = {[{transform: [{rotateY: interpolateBack}]}, styles.back, styles.hidden]}>
-            <FlipCard/>
+            <IDback/>
           </Animated.View>
           <View style = {{paddingTop: 10}}>
           <View>
@@ -81,6 +82,10 @@ export default function HomeScreen(props) {
       shadowOffset: {width: -2, height: 4},
       shadowOpacity: 0.2,
       shadowRadius: 3,
-    }
+    },
+    IDCard: {
+      width: 300,
+      height: 200,
+  },
 
 });
