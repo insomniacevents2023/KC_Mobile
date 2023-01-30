@@ -3,7 +3,7 @@ import { Button } from '@rneui/themed';
 import {StyleSheet, View, Animated, Pressable} from 'react-native';
 import { useRef, useState } from 'react'; 
 import IDfront from '../../components/IDfront';
-import IDback from '../../components/IDback,';
+import IDback from '../../components/IDback';
 
 export default function HomeScreen(props) {
   const {fName, lName, kCashNum, libNumber, UCFID, caste, expDate} = props
@@ -31,28 +31,25 @@ export default function HomeScreen(props) {
   
     return (
       <SafeAreaProvider>
-      <View style={styles.container}>
-        <View>
-          <Animated.View style = {[{transform: [{rotateY: interpolateFront}]}, styles.hidden]}>
-            <IDfront
-            isFlipped= {isFlipped}
+      <View style = {styles.container}>
+          <View >
+            <Animated.View style = {[{transform: [{rotateY: interpolateFront}]}, styles.hidden, styles.cardContainer]}>
+              <IDfront
+              isFlipped= {isFlipped}
             fName= {fName}
             lName = {lName} 
             kCashNum ={kCashNum} 
             libNumber = {libNumber} 
             UCFID = {UCFID}
             caste = {caste}
-            expDate = {expDate} />
-          </Animated.View>
-          <Animated.View style = {[{transform: [{rotateY: interpolateBack}]}, styles.back, styles.hidden]}>
-            <IDback/>
-          </Animated.View>
-          <View style = {{paddingTop: 10}}>
-          <View>
-            <Button title={"press me"} onPress = {handleFlip}></Button>
-          </View>
+              expDate = {expDate} />
+            </Animated.View>
+            <Animated.View style = {[{transform: [{rotateY: interpolateBack}]}, styles.back, styles.hidden, styles.cardContainer]}>
+              <IDback
+              UCFID = {UCFID}/>
+            </Animated.View>
         </View>
-      </View>
+        <Button title={"Scan Card"} onPress = {handleFlip}></Button>
       </View>
       </SafeAreaProvider>
     );
@@ -61,6 +58,7 @@ export default function HomeScreen(props) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
+      height: "200",
       backgroundColor: "#fff",
       alignItems: 'center', 
       justifyContent: 'center'
@@ -73,19 +71,12 @@ export default function HomeScreen(props) {
       top: 0
 
     },
-    myButton: {
-      padding: 10,
-      borderRadius: 10,
-      backgroundColor: "#FFC904",
-      color: "#000",
-      shadowColor: '#171717',
-      shadowOffset: {width: -2, height: 4},
-      shadowOpacity: 0.2,
-      shadowRadius: 3,
-    },
-    IDCard: {
-      width: 300,
-      height: 200,
-  },
+    cardContainer: {
+      minHeight: 200,
+      minWidth: 350,
+      maxHeight: 200,
+      maxWidth: 350
+    }
+
 
 });

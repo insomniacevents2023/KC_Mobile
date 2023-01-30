@@ -11,7 +11,7 @@ let user = {
   lName: "knight",
   kCashNum: "6009 1921 5309 4359",
   libNumber: "2 21031 52662067",
-  UCFID: 123457,
+  UCFID: "123457",
   username: "ik123456",
   password: 'ikpassword',
   caste: 'Student',

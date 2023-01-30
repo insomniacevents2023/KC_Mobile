@@ -7,10 +7,8 @@ export default function IDfront(props){
 
     return(
         <View>
-            <Card>
-            <View style={styles.nameplate}>
+            <Card style = {styles.IDcard}>
                 <Text style={styles.nameText}>{fName} {lName}</Text>
-            </View>
                 <View>
                     <Text>{expDate}</Text>
                 </View>
@@ -45,8 +43,7 @@ const styles = StyleSheet.create({
     },
     nameText: {
         color: "#fff",
-        marginLeft: 100,
-        marginRight: 100,
+        backgroundColor: "#000",
         padding: 10
     },
     userProps: {
