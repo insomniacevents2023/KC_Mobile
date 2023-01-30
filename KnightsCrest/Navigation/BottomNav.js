@@ -2,7 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
-import HomeScreen from "../Screens/HomeScreen";
+import HomeScreen from "../Screens/LoginStackScreen/HomeScreen";
 import KnightsCash from "../Screens/KnightsCashScreens/KnightsCashMain";
 import LibraryStack from "./LibraryStack";
 

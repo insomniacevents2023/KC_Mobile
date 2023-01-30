@@ -1,9 +1,8 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button } from '@rneui/themed';
 import {StyleSheet, View, Animated, Pressable, Text} from 'react-native';
 import { useRef, useState } from 'react'; 
-import IDfront from '../components/IDfront';
-import IDback from '../components/IDback';
+import IDfront from '../../components/IDfront';
+import IDback from '../../components/IDback';
 
 export default function HomeScreen(props) {
   const {fName, lName, kCashNum, libNumber, UCFID, caste, expDate} = props
@@ -36,12 +35,12 @@ export default function HomeScreen(props) {
             <Animated.View style = {[{transform: [{rotateY: interpolateFront}]}, styles.hidden, styles.cardContainer]}>
               <IDfront
               isFlipped= {isFlipped}
-            fName= {fName}
-            lName = {lName} 
-            kCashNum ={kCashNum} 
-            libNumber = {libNumber} 
-            UCFID = {UCFID}
-            caste = {caste}
+              fName= {fName}
+              lName = {lName} 
+              kCashNum ={kCashNum} 
+              libNumber = {libNumber} 
+              UCFID = {UCFID}
+              caste = {caste}
               expDate = {expDate} />
             </Animated.View>
             <Animated.View style = {[{transform: [{rotateY: interpolateBack}]}, styles.back, styles.hidden, styles.cardContainer]}>

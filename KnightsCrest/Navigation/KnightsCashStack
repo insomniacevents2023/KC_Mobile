@@ -9,7 +9,8 @@ export default function KnightsCashStack() {
     return(
           <Stack.Navigator>
             <Stack.Screen name="Main" component= {KnightsCashMain}/>
-            <Stack.Screen name="Add" component= {KnightsCashAdd}/>
+            <Stack.Screen name="Balance" component= {KnightsCashAdd}/>
+            <Stack.Screen name="Add" component={KnightsCashAdd}/>
           </Stack.Navigator>
           );
 }

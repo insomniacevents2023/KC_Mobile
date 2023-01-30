@@ -27,7 +27,7 @@ export default function Login({navigation}) {
     return (
       <SafeAreaProvider>
         <View style={styles.container}>
-          <Image style = {styles.tabHorizontal} source={require('../assets/images/TabLockup.png')} alt={'University of Central Florida'}/>
+        <Image style = {styles.tabHorizontal} source={require("../../assets/images/TabLockup.png")} alt={'University of Central Florida'}/>
           <Card containerStyle = {styles.loginCard}>
             <View>
               <Text style ={styles.fieldTitle}>Account</Text>
