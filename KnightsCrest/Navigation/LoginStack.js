@@ -3,15 +3,15 @@ import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-import Login from '../screens/Login';
-import DrawerNav from './DrawerNav';
+import Login from '../Screens/Login';
+import BottomNav from './BottomNav';
 
 const Stack = createStackNavigator();
-export default function MainStack() {
+export default function LoginStack() {
     return(
           <Stack.Navigator>
             <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name='Home' component={DrawerNav}/>
+            <Stack.Screen name = "Home" component={BottomNav}/>
           </Stack.Navigator>
           );
 

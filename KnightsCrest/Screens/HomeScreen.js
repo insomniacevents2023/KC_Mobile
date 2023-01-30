@@ -2,8 +2,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Button } from '@rneui/themed';
 import {StyleSheet, View, Animated, Pressable} from 'react-native';
 import { useRef, useState } from 'react'; 
-import IDfront from '../../components/IDfront';
-import IDback from '../../components/IDback';
+import IDfront from '../components/IDfront';
+import IDback from '../components/IDback';
 
 export default function HomeScreen(props) {
   const {fName, lName, kCashNum, libNumber, UCFID, caste, expDate} = props
