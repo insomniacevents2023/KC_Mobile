@@ -1,21 +1,22 @@
 import { View, Text , StyleSheet, Pressable} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import InnerButton from "../../components/InnerButton";
 
 export default function LibraryMain({navigation, route}){
     return(
     <SafeAreaView>
         <View style = {styles.container}>
-            <View>
-            <Pressable style = {styles.button}></Pressable>
+            <View style = {{paddingTop: 10}}>
+                <InnerButton title = "Library Loans"/>
             </View>
-            <View>
-            <Pressable style = {styles.button}></Pressable>
+            <View style = {{paddingTop: 10}}>
+                <InnerButton title = "Requests"/>
             </View>
-            <View>
-            <Pressable style = {styles.button}></Pressable>
+            <View style = {{paddingTop: 10}}>
+                <InnerButton title = "Returns"/>
             </View>
-            <View>
-            <Pressable style = {styles.button}></Pressable>
+            <View style = {{paddingTop: 10}}>
+                <InnerButton title = "Late Fees/Fines"/>
             </View>
         </View>
     </SafeAreaView>)
@@ -27,17 +28,4 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-    },
-    button: {
-        width: 240,
-        padding: 10,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 1,
-        borderLeftWidth: 5,
-        borderStartColor: "#ffc904",
-        borderRadius: 2,
-        borderColor: "#ffc904",
-        elevation: 3,
-        backgroundColor: 'white',
-    }})
+    },})
