@@ -1,6 +1,6 @@
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button } from '@rneui/themed';
-import {StyleSheet, View, Animated, Pressable} from 'react-native';
+import {StyleSheet, View, Animated, Pressable, Text} from 'react-native';
 import { useRef, useState } from 'react'; 
 import IDfront from '../components/IDfront';
 import IDback from '../components/IDback';
@@ -30,7 +30,7 @@ export default function HomeScreen(props) {
   
   
     return (
-      <SafeAreaProvider>
+      <SafeAreaView>
       <View style = {styles.container}>
           <View >
             <Animated.View style = {[{transform: [{rotateY: interpolateFront}]}, styles.hidden, styles.cardContainer]}>
@@ -49,16 +49,17 @@ export default function HomeScreen(props) {
               UCFID = {UCFID}/>
             </Animated.View>
         </View>
-        <Button title={"Scan Card"} onPress = {handleFlip}></Button>
+        <Pressable style = {styles.button} onPress = {handleFlip}>
+          <Text>Scan Card</Text>
+        </Pressable>
       </View>
-      </SafeAreaProvider>
+      </SafeAreaView>
     );
   }
 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      height: "200",
       backgroundColor: "#fff",
       alignItems: 'center', 
       justifyContent: 'center'
@@ -76,7 +77,14 @@ export default function HomeScreen(props) {
       minWidth: 350,
       maxHeight: 200,
       maxWidth: 350
-    }
-
-
-});
+    },
+    button: {
+      width: 250,
+      height:35,
+      padding: 10,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 10,
+      elevation: 3,
+      backgroundColor: "#ffc904",
+},});

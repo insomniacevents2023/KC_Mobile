@@ -15,7 +15,7 @@ let user = {
   username: "ik123456",
   password: 'ikpassword',
   caste: 'Student',
-  expDate: '2025-03-31'
+  expDate: '2025-03-31T00:00:00'
 }
 export default function Login({navigation}) {
 
