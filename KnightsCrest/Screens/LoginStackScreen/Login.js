@@ -32,18 +32,16 @@ export default function Login({navigation}) {
             <View>
               <Text style ={styles.fieldTitle}>Account</Text>
                 <TextInput 
-                onFocus={()=> {setAccountFocus(true)}}
+                onChangeText={()=> {setAccountFocus(true)}}
                 style = {accountIsFocus}
                 placeholder='Username: NID or DTC-Atlas ID'
-                onBlur={() => setAccountFocus(false)}
                 ></TextInput>
     
               <Text>Password</Text>
               <TextInput
                   placeholder='Password'
                   secureTextEntry={true}
-                  onFocus={()=> setPasswordFocus(true)}
-                  onBlur={() => setPasswordFocus(false)}
+                  onChangeText={()=> setPasswordFocus(true)}
                   style = {passwordIsFocus}></TextInput>
               </View>
               <View style={{paddingTop: 10}}>
@@ -62,7 +60,7 @@ export default function Login({navigation}) {
                 <StatusBar style="auto" />
         </View>
         </SafeAreaProvider>
-        )
+        )  
 }
 
 const styles = StyleSheet.create({

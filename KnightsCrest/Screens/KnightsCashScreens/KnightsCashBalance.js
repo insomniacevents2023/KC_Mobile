@@ -2,14 +2,16 @@ import { useState } from "react";
 import { View, Text, StyleSheet, Switch, Pressable } from "react-native";
 import { Card } from "@rneui/themed";
 import Transaction from "../../components/Transaction";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function KnightsCashMain({navigation, route})
+export default function KnightsCashBalance({navigation, route})
 {
     let myBalance = 0.00;
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
     return(
+    <SafeAreaView>
     <View style = {styles.container}>
         <Text>Welcome fName lName</Text>
         <Card containerStyle = {styles.subSec}>
@@ -42,7 +44,8 @@ export default function KnightsCashMain({navigation, route})
             <Transaction date ="2022-02-03T12:00:00" amount = {2.50}/>
         </View>
         </Card>
-    </View>)
+    </View>
+    </SafeAreaView>)
 }
 
 
