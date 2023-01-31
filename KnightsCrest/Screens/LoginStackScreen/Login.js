@@ -25,8 +25,8 @@ export default function Login({navigation}) {
     const passwordIsFocus = PasswordFocus ? styles.loginInputFocus : styles.loginInput;
 
     return (
-      <SafeAreaProvider>
-        <View style={styles.container}>
+      <SafeAreaProvider style={styles.container}>
+        <View >
         <Image style = {styles.tabHorizontal} source={require("../../assets/images/TabLockup.png")} alt={'University of Central Florida'}/>
           <Card containerStyle = {styles.loginCard}>
             <View>

@@ -2,11 +2,13 @@ import { View, Text, StyleSheet} from "react-native"
 import { TextInput } from "react-native-gesture-handler"
 import { Card } from '@rneui/themed';
 import FormButton from "../../components/FormButton";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function KnightsCashAdd({navigation}){
     
     return(
-        <View style = {styles.container}>
+        <SafeAreaView style = {styles.container}>
+        <View >
             <View>
                 <Text>ADD KNIGHTS CASH FUND</Text>
             </View>
@@ -41,9 +43,11 @@ export default function KnightsCashAdd({navigation}){
                 </View>
             </Card>
             <View style = {{paddingTop: 10}}>
+            {/* Incorporate validation and data management */}
             <FormButton title = "Add Funds"></FormButton>
             </View>
         </View>
+        </SafeAreaView>
     )
 }
 

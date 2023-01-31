@@ -11,8 +11,8 @@ export default function KnightsCashBalance({navigation, route})
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
     return(
-    <SafeAreaView>
-    <View style = {styles.container}>
+    <SafeAreaView style = {styles.container}>
+    <View >
         <Text>Welcome fName lName</Text>
         <Card containerStyle = {styles.subSec}>
             <View style ={styles.horizontalFlex}>
@@ -41,7 +41,7 @@ export default function KnightsCashBalance({navigation, route})
             <Text>Funds In/Out</Text>
         </View>
         <View>
-            <Transaction date ="2022-02-03T12:00:00" amount = {2.50}/>
+            <Transaction date ="2025-02-03T12:00:00" amount = {2.50}/>
         </View>
         </Card>
     </View>

@@ -4,8 +4,8 @@ import InnerButton from "../../components/InnerButton";
 
 export default function KnightsCashMain({navigation, route}){
     return(
-    <SafeAreaView>
-        <View style = {styles.container}>
+    <SafeAreaView style = {styles.container}>
+        <View >
             <View style = {{paddingTop: 10}}>
                 <InnerButton title = "Balance"/>
             </View>

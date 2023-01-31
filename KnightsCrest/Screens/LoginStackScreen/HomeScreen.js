@@ -29,9 +29,8 @@ export default function HomeScreen(props) {
   
   
     return (
-      <SafeAreaView>
-      <View style = {styles.container}>
-          <View >
+      <SafeAreaView style = {styles.container}>
+        <View>
             <Animated.View style = {[{transform: [{rotateY: interpolateFront}]}, styles.hidden, styles.cardContainer]}>
               <IDfront
               isFlipped= {isFlipped}
@@ -47,8 +46,7 @@ export default function HomeScreen(props) {
               <IDback
               UCFID = {UCFID}/>
             </Animated.View>
-        </View>
-        <Pressable style = {styles.button} onPress = {handleFlip}>
+            <Pressable style = {styles.button} onPress = {handleFlip}>
           <Text>Scan Card</Text>
         </Pressable>
       </View>
