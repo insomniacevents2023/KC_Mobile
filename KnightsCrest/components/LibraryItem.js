@@ -7,8 +7,9 @@ export default function LibraryItem(props){
     const {itemID, item, dueDate, pickupLocation} = props;
 
     // Format date
+    console.log(dueDate)
     let myDate = new Date(dueDate);
-    let formatDate = format(myDate, 'MM/dd/yyyy')
+    let formatDate = format(myDate, 'mm/dd/yyyy')
 
     return(
         <View>
@@ -33,7 +34,7 @@ export default function LibraryItem(props){
 const styles = StyleSheet.create({
     loanItemCard: {
         width: 300,
-        height:125,
+        height:100,
         backgroundColor: "#FDF1BC",
         shadowColor: "#000000",
         boxShadow: "10px 10px 17px -12px rgba(0,0,0,0.75)"

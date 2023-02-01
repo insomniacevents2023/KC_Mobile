@@ -1,14 +1,24 @@
 import { Card } from "@rneui/themed";
 import { View, Text, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import LibraryReqItem from "../../components/LibraryReqItem";
 
-export default function LibraryReq(props){
-    const {hasRequest, requestedItem} = props
+export default function LibraryReq(){
+    //For testing
+    let hasRequest = true;
+    let requestedItem = "Neuromancer / Gibson, William"
+    let requestDate = "2022-02-03T09:00:00" 
+    let pickupLocation ="UCF Main"
     if(hasRequest){
         return(
             <SafeAreaView style = {styles.container}>
                 <View>
                     <Text>Request</Text>
+                    {/*Implement a flat list when data is present*/}
+                    <LibraryReqItem 
+                    requestedItem = {requestedItem}
+                    requestDate = {requestDate}
+                    pickupLocation = {pickupLocation}/>
                 </View>
             </SafeAreaView>
         )}
