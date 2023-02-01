@@ -21,12 +21,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         elevation: 3,
         backgroundColor: "#ffc904",
-        shadowColor: "#000000",
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
-        shadowOffset: {
-          height: 1,
-          width: 1
-        }
+        boxShadow: "10px 10px 17px -12px rgba(0,0,0,0.75)"
   },
 })

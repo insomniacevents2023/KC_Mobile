@@ -17,7 +17,7 @@ export default function KnightsCashBalance({navigation, route})
         <Card containerStyle = {styles.subSec}>
             <View style ={styles.horizontalFlex}>
                 <Text>Balance:                               </Text>
-                <Text>${myBalance}</Text>
+                <Text>${myBalance.toFixed(2)}</Text>
             </View>
         </Card>
         <Card containerStyle = {styles.subSec}>

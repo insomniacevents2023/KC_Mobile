@@ -31,7 +31,7 @@ export default function HomeScreen(props) {
     return (
       <SafeAreaView style = {styles.container}>
         <View>
-            <Animated.View style = {[{transform: [{rotateY: interpolateFront}]}, styles.hidden, styles.cardContainer]}>
+            <Animated.View style = {[{transform: [{rotateY: interpolateFront}]}, styles.hidden]}>
               <IDfront
               isFlipped= {isFlipped}
               fName= {fName}
@@ -42,13 +42,31 @@ export default function HomeScreen(props) {
               caste = {caste}
               expDate = {expDate} />
             </Animated.View>
-            <Animated.View style = {[{transform: [{rotateY: interpolateBack}]}, styles.back, styles.hidden, styles.cardContainer]}>
+            <Animated.View style = {[{transform: [{rotateY: interpolateBack}]}, styles.back, styles.hidden]}>
               <IDback
               UCFID = {UCFID}/>
             </Animated.View>
-            <Pressable style = {styles.button} onPress = {handleFlip}>
-          <Text>Scan Card</Text>
-        </Pressable>
+      </View>
+      <View style = {{paddingTop: 10}}>
+      <Pressable style = {styles.button} onPress = {handleFlip}>
+              <Text>Scan Card</Text>
+      </Pressable>
+      </View>
+      <View style ={{paddingTop: 10}}>
+      <View style = {styles.personalInfoContainer}>
+        <View>
+          <Text>{caste}</Text>
+        </View>
+        <View>
+          <Text>{fName} {lName}</Text>
+        </View>
+        <View>
+          <Text>{libNumber}</Text>
+        </View>
+        <View>
+          <Text>UCFID: {UCFID}</Text>
+        </View>
+      </View>
       </View>
       </SafeAreaView>
     );
@@ -56,10 +74,10 @@ export default function HomeScreen(props) {
 
   const styles = StyleSheet.create({
     container: {
+      justifyContent: "center",
       flex: 1,
       backgroundColor: "#fff",
       alignItems: 'center', 
-      justifyContent: 'center'
     },
     hidden: {
       backfaceVisibility: 'hidden',
@@ -69,14 +87,8 @@ export default function HomeScreen(props) {
       top: 0
 
     },
-    cardContainer: {
-      minHeight: 200,
-      minWidth: 350,
-      maxHeight: 200,
-      maxWidth: 350
-    },
     button: {
-      width: 250,
+      width: 125,
       height:35,
       padding: 10,
       alignItems: 'center',
@@ -84,11 +96,22 @@ export default function HomeScreen(props) {
       borderRadius: 10,
       elevation: 3,
       backgroundColor: "#ffc904",
-      shadowColor: "#000000",
-      shadowOpacity: 0.8,
-      shadowRadius: 2,
-      shadowOffset: {
-        height: 1,
-        width: 1
-      }
-},});
+      boxShadow: "10px 10px 17px -12px rgba(0,0,0,0.75)"    
+    },
+    personalInfoContainer: {
+      height: 150,
+      width: 200,
+      padding: 10,
+      borderWidth: 1,
+      borderLeftWidth: 5,
+      borderStartColor: "#ffc904",
+      borderRadius: 2,
+      borderColor: "#ffc904",
+      elevation: 3,
+      backgroundColor: 'white',
+      boxShadow: "10px 10px 17px -12px rgba(0,0,0,0.75)"
+    }
+
+
+
+});

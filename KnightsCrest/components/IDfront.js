@@ -6,9 +6,11 @@ export default function IDfront(props){
     const {fName, lName, kCashNum, libNumber, UCFID, caste, expDate} = props;
 
     return(
-        <View>
-            <Card style = {styles.IDcard}>
+        <>
+            <Card containerStyle = {styles.IDcard}>
+                <View style = {styles.nameplate}>
                 <Text style={styles.nameText}>{fName} {lName}</Text>
+                </View>
                 <View>
                     <Text>{expDate}</Text>
                 </View>
@@ -28,23 +30,24 @@ export default function IDfront(props){
                     <Text>{caste}</Text>
                 </View>
             </Card>
-        </View>
+        </>
     )
 }
 
 const styles = StyleSheet.create({
+    IDcard:{
+        height: 250,
+        width: 200,
+        boxShadow: "10px 10px 17px -12px rgba(0,0,0,0.75)"
+    },
     IDcontainer: {
         flexDirection: "row"
     },
     nameplate: {
         backgroundColor:"#000",
-       
-        
+        margin: 0
     },
     nameText: {
-        color: "#fff",
-        backgroundColor: "#000",
-        padding: 10
     },
     userProps: {
         flexDirection: "row"

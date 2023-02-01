@@ -54,10 +54,11 @@ export default function Login({navigation}) {
                     ></Button>
               </View>
                   </Card>
-                  <Text>By signing on, you agree to the terms of the </Text>
-                  <Text style = {styles.hyperlink} onPress={() => Linking.openURL('https://policies.ucf.edu/')}>UCF Policies & Procedures.</Text>
-                  
-                <StatusBar style="auto" />
+
+        </View>                  
+        <View style = {{paddingTop: 10}}>
+            <Text>By signing on, you agree to the terms of the </Text>
+            <Text style = {styles.hyperlink} onPress={() => Linking.openURL('https://policies.ucf.edu/')}>UCF Policies & Procedures.</Text>
         </View>
         </SafeAreaProvider>
         )  
@@ -89,13 +90,7 @@ const styles = StyleSheet.create({
     },
     loginCard: {
       backgroundColor: "#FDF1BC",
-      shadowColor: "#000000",
-      shadowOpacity: 0.8,
-      shadowRadius: 2,
-      shadowOffset: {
-        height: 1,
-        width: 1
-      }
+      boxShadow: "10px 10px 17px -12px rgba(0,0,0,0.75)"
     },
     hyperlink: {
       color: "blue",

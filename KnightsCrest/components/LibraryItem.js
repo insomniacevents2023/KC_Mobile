@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { format } from "date-fns";
 
 
-export default function LoanItem(props){
+export default function LibraryItem(props){
     const {itemID, item, dueDate, pickupLocation} = props;
 
     // Format date
@@ -32,12 +32,9 @@ export default function LoanItem(props){
 
 const styles = StyleSheet.create({
     loanItemCard: {
+        width: 300,
+        height:125,
         backgroundColor: "#FDF1BC",
         shadowColor: "#000000",
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
-        shadowOffset: {
-          height: 1,
-          width: 1
-        }
+        boxShadow: "10px 10px 17px -12px rgba(0,0,0,0.75)"
       }})

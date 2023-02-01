@@ -1,23 +1,16 @@
 import { SafeAreaView, View, StyleSheet, Text } from "react-native";
-import LoanItem from "../../components/LoanItem";
+import LibraryItem from "../../components/LibraryItem";
 
 export default function LibraryLoans(){
     return(
         <SafeAreaView style = {styles.container}>
-            <View>
                 <View>
-                    <Text>
-                        Loans
-                    </Text>
-                    <Text>
-                        Loan balance
-                    </Text>
-                    {/*
-                        Incorporate a FlatList when back-end is complete
-                    */}
-                    <LoanItem item = "DTC Alienware Laptop" itemID = {1} dueDate = "2022-02-10T09:00:00" pickupLocation = "UCF Downtown Tech Lending" />
+                    <Text>Loans</Text>
                 </View>
-            </View>
+                    <LibraryItem 
+                    item = "DTC Alienware Laptop" 
+                    itemID = {1} dueDate = "2022-02-10T09:00:00" 
+                    pickupLocation = "UCF Downtown Tech Lending" />
         </SafeAreaView>
     )
 }
@@ -28,7 +21,6 @@ const styles = StyleSheet.create(
             flex: 1,
             backgroundColor: '#fff',
             alignItems: 'center',
-            justifyContent: 'center',
           },
     }
 )
