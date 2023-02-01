@@ -15,8 +15,11 @@ import LibraryReq from "../Screens/LibraryStackScreens/LibraryReq";
 
 export default function BottomNav(){
   return (
-    <Tab.Navigator>
-     <Tab.Screen name="Home" component={HomeScreen} />
+    <Tab.Navigator screenOptions = {{
+      headerShown: false}}>
+     <Tab.Screen name="Home" component={HomeScreen} options = {{headerStyle: {
+      backgroundColor: '#FFC904', position: "absolute"
+     }}}/>
      <Tab.Screen name ="KnightsCash" component={KnightsCashStack}/>
      <Tab.Screen name="Library" component={LibraryStack}/>
     </Tab.Navigator>

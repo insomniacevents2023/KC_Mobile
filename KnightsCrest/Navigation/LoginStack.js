@@ -9,9 +9,17 @@ import BottomNav from './BottomNav';
 const Stack = createStackNavigator();
 export default function LoginStack() {
     return(
-          <Stack.Navigator>
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name = "Home" component={BottomNav}/>
+          <Stack.Navigator screenOptions = {{
+            headerShown: false}}>
+            <Stack.Screen name="Login" component={Login}/>
+            <Stack.Screen name = "Home" component={BottomNav}
+            options = {{
+              headerStyle:{
+                backgroundColor: "#FFC904",
+                position: "absolute",
+                title: "Home"
+              }
+            }}/>
           </Stack.Navigator>
           );
 
